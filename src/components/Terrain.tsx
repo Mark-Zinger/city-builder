@@ -21,9 +21,9 @@ type GLTFResult = GLTF & {
 export default function Model({ ...props }: JSX.IntrinsicElements['group']) {
   const group = useRef<THREE.Group>()
   //@ts-ignore
-  const { scene,nodes, materials } = useGLTF('/assets/terain.glb', true) as GLTFResult
-  console.log(nodes)
-  useEffect(() => console.log(group))
+  const { scene } = useGLTF('/assets/terain.glb', true) as GLTFResult
+
+
   return (
     <primitive object={scene}></primitive>
   )
