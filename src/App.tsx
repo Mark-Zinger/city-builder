@@ -9,6 +9,7 @@ import {Provider} from "react-redux";
 import {store} from "./app/store";
 import TileManager from "./components/TileManager";
 import EntityManager from "./components/EntityManager";
+import GameInterface from "./components/GameInterface";
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
   
   return (
     <div className="App">
+      <GameInterface/>
       <Suspense fallback={null}>
         <Canvas>
           <Provider store={store}>
