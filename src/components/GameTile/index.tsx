@@ -1,17 +1,18 @@
-import TileRoad from "./road";
-import {neighbours} from "../../helpers/normalizeGridPosition";
+import TileRoad from "../../tiles/road";
+import WaterTower from "../../tiles/WaterTower";
+import TileProps from "../../types/TileProps";
+import TileHouse from "../../tiles/TileHouse";
+import RoadBridge from "../../tiles/RoadBridge";
+
+type TilePropsHoc = TileProps & {tile_id: number}
 
 
-interface TileProps {
-  position: [number,number],
-  tile_id:number,
-  neighbours: neighbours
-}
-
-function Tile ({tile_id, ...ownProps}:TileProps) {
+function Tile ({tile_id, ...ownProps}:TilePropsHoc) {
   switch (tile_id) {
-    case 2: return <TileRoad {...ownProps} />;
-    
+    case 2:  return <TileRoad {...ownProps} />;
+    case 3:  return <RoadBridge {...ownProps}/>;
+    case 10: return <WaterTower {...ownProps}/>;
+    case 14: return <TileHouse {...ownProps}/>;
     default: return null;
   }
 }

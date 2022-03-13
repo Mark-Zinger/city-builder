@@ -1,4 +1,4 @@
-export interface GameEntity {
+interface GameEntityType {
   id: string,
   e_key: number, // entity key
   size: [number, number],
@@ -7,4 +7,4 @@ export interface GameEntity {
 }
 
 
-export default GameEntity
+export default GameEntityType

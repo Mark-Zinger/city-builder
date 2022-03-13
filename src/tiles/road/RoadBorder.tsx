@@ -1,4 +1,4 @@
-import {RoadType} from "../../../helpers/roadData";
+import {RoadType} from "../../helpers/getRoadData";
 import {Box} from "@react-three/drei";
 
 

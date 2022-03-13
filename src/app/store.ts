@@ -1,9 +1,11 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
 import gameGridReducer from "../features/game_grid";
+import entityesReducer from "../features/entityes";
 
 export const store = configureStore({
   reducer: {
     game_grid: gameGridReducer,
+    game_entityes: entityesReducer
   },
 });
 

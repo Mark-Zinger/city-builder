@@ -1,36 +1,32 @@
 import {Plane} from "@react-three/drei";
-import {neighbours, normalizeGridPosition} from "../../../helpers/normalizeGridPosition";
-import {useAppSelector} from "../../../app/hooks";
-import {selectGameGrid} from "../../../features/game_grid";
-import getRoadData from "../../../helpers/roadData";
+import getRoadData from "../../helpers/getRoadData";
 import {memo} from "react";
 import RoadBorder from "./RoadBorder";
 import RoadMarkups from "./RoadMarkups";
+import TileWrapper from "../../hoc/TileWrapper";
+import TileProps from "../../types/TileProps";
 
-interface TileProps {
-  position: [number, number]
-  neighbours: neighbours
-}
+
 
 
 const TileRoad = memo((props: TileProps) => {
   const {position, neighbours} = props
-  const {size} = useAppSelector(selectGameGrid)
-  
-  const nPosition = normalizeGridPosition(position, size);
+
   const { type, rotate } = getRoadData(neighbours)
   
   return (
-    <group position={nPosition} rotation-y={rotate}>
-      <Plane
-        args={[1,1]}
-        rotation-x={-Math.PI/2}
-        material-color={"gray"}
-      />
-      
-      <RoadBorder type={type}/>
-      <RoadMarkups type={type}/>
-    </group>
+    <TileWrapper position={position}>
+      <group rotation-y={rotate}>
+        <Plane
+          args={[1,1]}
+          rotation-x={-Math.PI/2}
+          material-color={"gray"}
+        />
+    
+        <RoadBorder type={type}/>
+        <RoadMarkups type={type}/>
+      </group>
+    </TileWrapper>
   )
 })
 
