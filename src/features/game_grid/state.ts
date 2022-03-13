@@ -1,5 +1,5 @@
 import GameEntity from "../../types/GameEntity";
-import default_water_grid from "../../data/default_water_grid";
+import default_water_grid from "../../data/default_grid";
 
 export interface GameGridState {
   size: [number, number];

@@ -13,8 +13,6 @@ function TileManager () {
         (row, x) => ( row.map(
           (tile_id, y) => {
             const neighbours = getNeighbours([x,y], grid);
-  
-            console.log({cord: [x, y], neighbours })
             
             return <GameTile key={keygen(x, y)} position={[x, y]} tile_id={tile_id} neighbours={neighbours}/>
           }

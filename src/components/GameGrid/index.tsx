@@ -34,10 +34,11 @@ function GameGrid () {
         onPointerMove={(e)=> {
           const fVector = floorVector(e.point);
           console.log(getGridPositionFromVec(fVector, size));
-          setHoverVec3( fVector )
+          setHoverVec3(fVector )
         }}
         visible={false}
       />
+      
       <Plane
         args={[1,1]}
         rotation-x={-Math.PI/2}

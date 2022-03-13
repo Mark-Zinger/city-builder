@@ -12,6 +12,7 @@ import {Provider} from "react-redux";
 import {store} from "./app/store";
 import TileRoad from "./components/GameTile/road";
 import TileManager from "./components/TileManager";
+import WaterTowerTile from "./components/GameTile/WaterTower";
 
 
 function App() {
@@ -26,7 +27,7 @@ function App() {
           <pointLight position={[0, 100, 0]} intensity={0.5} />
   
   
-  
+          <WaterTowerTile/>
           <TileManager/>
           <GameGrid/>
           <OrbitControls/>
