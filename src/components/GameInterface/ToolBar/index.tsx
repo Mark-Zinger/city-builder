@@ -27,8 +27,8 @@ export default function ToolBar () {
 
       >
         { 
-          Tools.main.map(({name, component}) => 
-          (<ToggleButton key={name} value={name} onClick={()=>setValue(name)}>{component}</ToggleButton>))
+          Tools.main.map(({name, component, disable}) =>
+          (<ToggleButton key={name} value={name} onClick={()=>setValue(name)} disabled={disable}>{component}</ToggleButton>))
         }
       </ToggleButtonGroup>
       {/*<ToggleButtonGroup*/}

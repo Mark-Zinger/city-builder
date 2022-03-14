@@ -15,4 +15,4 @@ export function Cursor () {
 }
 
 
-export default { name: 'cursor', component: <Cursor/>};
+export default { name: 'cursor', disable:false, component: <Cursor/>};

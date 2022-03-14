@@ -13,4 +13,4 @@ export function Move () {
     )
 }
 
-export default { name: 'move', component: <Move/> };
+export default { name: 'move', disable:true, component: <Move/> };

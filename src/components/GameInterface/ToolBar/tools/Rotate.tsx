@@ -3,7 +3,7 @@ import Tooltip from '@mui/material/Tooltip';
 import SvgIcon from '@mui/material/SvgIcon';
 
 
-export function Eraser () {
+export function Rotate () {
     return (
         <Tooltip title="Rotate (WORK IN PROGRESS)" placement="right">
           <SvgIcon viewBox="0 0 509.823 509.822">
@@ -14,4 +14,4 @@ export function Eraser () {
 }
 
 
-export default { name: 'rotate', component: <Eraser/> };
+export default { name: 'rotate', disable:true, component: <Rotate/> };
